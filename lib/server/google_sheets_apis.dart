@@ -44,4 +44,9 @@ class UserSheetsApis {
       return spreadsheet.worksheetByTitle(title)!;
     }
   }
+  static Future insert(List<Map<String ,dynamic>>rowsList)async{
+    if(_userSheet ==null) return ;
+  await _userSheet!.values.map.appendRows(rowsList);
+
+  }
 }
