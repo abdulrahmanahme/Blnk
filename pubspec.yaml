@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   responsive_sizer: ^3.1.1
   dropdownfield2: ^1.0.7
+  image_picker: ^1.0.0
+  image_cropper: ^2.0.3
+  gsheets: ^0.4.2
+
 
 dev_dependencies:
   flutter_test:
