@@ -1,3 +1,4 @@
+
 class UserModel {
   static const String id = '1';
   static const String firstName = 'FirstName';

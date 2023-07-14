@@ -1,11 +1,15 @@
 import 'package:blnk/screen/home_screen.dart';
+import 'package:blnk/server/google%20_drive_apis.dart';
 import 'package:blnk/server/google_sheets_apis.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await UserSheetsApis.init();
+  await GoogleDriveApis.createFolder();
+  GoogleDriveApis.addSpreadsheets();
+
   runApp(const MyApp());
 }
 
