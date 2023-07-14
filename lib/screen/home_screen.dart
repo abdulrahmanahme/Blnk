@@ -109,15 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Column(
-                  children: [
-                    InkWell(
+               InkWell(
                       onTap: () {
                         selectImage().then((value) {
                           GoogleDriveApis.addImageToFolder(
@@ -134,19 +126,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    GridView.builder(
-                        itemCount: imageFileList.length,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3),
-                        itemBuilder: (BuildContext context, int index) {
-                          return Image.file(
-                            File(imageFileList[index].path),
-                            fit: BoxFit.cover,
-                          );
-                        }),
-                  ],
+              Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
                 ),
+                child: GridView.builder(
+                    itemCount: imageFileList.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3),
+                    itemBuilder: (BuildContext context, int index) {
+                      return Image.file(
+                        File(imageFileList[index].path),
+                        fit: BoxFit.cover,
+                      );
+                    }),
               ),
               const SizedBox(
                 height: 15,
